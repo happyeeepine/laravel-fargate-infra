@@ -7,7 +7,7 @@ resource "aws_subnet" "public" {
   vpc_id                  = aws_vpc.this.id
 
   tags = {
-    Name = "{aws_vpc.this.tags.Name}-public-${each.key}"
+    Name = "${aws_vpc.this.tags.Name}-public-${each.key}"
   }
 }
 
@@ -20,6 +20,6 @@ resource "aws_subnet" "private" {
   vpc_id                  = aws_vpc.this.id
 
   tags = {
-    Name = "{aws_vpc.this.tags.Name}-private-${each.key}"
+    Name = "${aws_vpc.this.tags.Name}-private-${each.key}"
   }
 }
